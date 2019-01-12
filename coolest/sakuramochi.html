@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <title>great</title>
+  <script>
+    function main()
+    {
+      for (let i = 0; i < 6; ++i)
+      {
+        const parent = document.createElement('div');
+        for (let j = 0; j < 3; ++j)
+        {
+          const box = document.createElement('span');
+          box.classList.add('sakuramochi');
+          box.addEventListener('click', function()
+            {
+              box.classList.add('eaten');
+            });
+          parent.appendChild(box);
+        }
+        document.body.appendChild(parent);
+      }
+    }
+  </script>
+  <style>
+    .sakuramochi {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background: pink;
+      cursor: pointer;
+      border-radius: 30%;
+      transition: 0.8s;
+      margin: 0 8px 8px 0;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .eaten {
+      width: 0px;
+      height: 0px;
+      margin: 0 108px 108px 0;
+      transform: translate(50px, 50px) rotate(360deg);
+    }
+  </style>
+</head>
+<body onload='main()'>
+</body>
+</html>
